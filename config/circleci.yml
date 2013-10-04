@@ -1,0 +1,8 @@
+token: circle_ci_token 
+projects:
+  - user: github_username 
+    repo: repository_name
+    css_id: repo-id
+  - user: mtchavez
+    repo: dashing-circleci
+    css_id: dashing-circleci
