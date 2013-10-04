@@ -1,0 +1,154 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$value-color:              rgba(255, 255, 255, 0.8);
+$background-color:         #78A300;
+$background-default-color: #e5e5e5;
+$background-error-color:   #903d3d;
+$background-passed-color:  #6fb269;
+$background-started-color: #84c0d7;
+$background-queued-color:  #84c0d7;
+$background-broken-color:  #222426;
+$background-no-test-color: #d2ab59;
+
+$title-color:       rgba(255, 255, 255, 0.8);
+$label-color:       rgba(255, 255, 255, 0.8);
+$moreinfo-color:    rgba(255, 255, 255, 0.8);
+
+
+// ----------------------------------------------------------------------------
+// Font
+// ----------------------------------------------------------------------------
+@font-face {
+    font-family: 'ClimaconsRegular';
+    src: url('/assets/weather.eot');
+    src: url('/assets/weather.eot') format('embedded-opentype'),
+         url('/assets/weather.woff') format('woff'),
+         url('/assets/weather.ttf') format('truetype'),
+         url('/assets/weather.svg#ClimaconsRegular') format('svg');
+}
+
+// ----------------------------------------------------------------------------
+// Widget-list styles
+// ----------------------------------------------------------------------------
+.widget-circle-ci {
+
+  background-color: $background-default-color;
+  vertical-align: top;
+
+  img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0.05;
+  }
+
+  .title {
+    color: $title-color;
+    font-size: 2.0em;
+    font-weight: bolder;
+  }
+
+  ol, ul {
+    margin: 0 15px;
+    text-align: left;
+    color: $label-color;
+  }
+
+  ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  ol {
+    list-style-position: inside;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  .list-nostyle {
+    list-style: none;
+  }
+
+  .label {
+    text-align: center;
+    display: block;
+    color: $label-color;
+    font-size: 24px;
+    word-wrap: break-word;
+  }
+
+  .value {
+    text-align: center;
+    display: block;
+    font-weight: 600;
+    color: $value-color;
+    font-size: 24px;
+    word-wrap: break-word;
+    width: 400px;
+    margin: 0 auto;
+    font-size: 1.0em;
+  }
+
+.committer {
+    text-align: center;
+    display: block;
+    color: $value-color;
+    font-size: 24px;
+    word-wrap: break-word;
+    width: 300px;
+    margin: 0 auto;
+    font-size: 1.3em;
+  }
+
+  .updated-at {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+  }
+
+  div.climate {
+    font-family: 'ClimaconsRegular';
+    position: absolute;
+    left: 30px;
+    bottom: 14px;
+    font-size: 3.5em;
+    color: rgba(255, 255, 255, 0.9)
+  }
+
+  &.failed,
+  &.errored,
+  &.timedout {
+    background-color: $background-error-color;
+  }
+
+  &.started,
+  &.running {
+    background-color: $background-started-color;
+  }
+
+  &.queued {
+    background-color: $background-queued-color;
+  }
+
+  &.passed,
+  &.success,
+  &.fixed {
+    background-color: $background-passed-color;
+  }
+
+  &.canceled,
+  &.no_tests,
+  &.broken {
+    background-color: $background-default-color;
+    color: $background-broken-color;
+
+    ul, li, div, .title, .committer, .value, .label, .climate {
+      color: $background-broken-color;
+    }
+  }
+
+}
