@@ -25,7 +25,7 @@ def broken_or_no_builds
 end
 
 def get_climate(builds = [])
-  return '|' if builds.blank?
+  return '|' if builds.empty?
   statuses = builds[0..10].map { |build| build['status'] if build['branch'] == 'master' }.compact
   weight = nil
 
@@ -46,7 +46,7 @@ def get_climate(builds = [])
 end
 
 def get_build_info(builds=[])
-  return broken_or_no_builds if builds.blank?
+  return broken_or_no_builds if builds.empty?
   build = builds.detect { |b| b['branch'] ==  'master' }
   {
     label: "Build ##{build['build_num']}",
